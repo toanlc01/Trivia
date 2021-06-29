@@ -9,7 +9,6 @@
         <script>
 
             // TODO: Add code to check answers to questions
-            // Switzerland
 
         </script>
 
@@ -66,11 +65,28 @@
 
                 <!-- TODO: Add free response question here -->
                 <h3>In which country is it illegal to own only one guinea pig, as a lone guinea pig might get lonely?</h3>
-                <form>
-                    <input type="text" id="answer">
-                    <input type="button" value="Check Answer">
-                </form>
+                <input type="text"></input>
+                <button id="check">Check Answer</button>
+                <p id="feedback2"></p>
 
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        let check = document.querySelector("#check");
+                        check.addEventListener("click", function() {
+                            if (document.querySelector("input").value == "Switzerland" ||
+                                document.querySelector("input").value == "switzerland" ||
+                                document.querySelector("input").value == "SWITZERLAND")
+                                {
+                                document.querySelector("#feedback2").innerHTML = "Correct!";
+                                document.querySelector("input").style.backgroundColor = 'green';
+                            }
+                            else {
+                                document.querySelector("#feedback2").innerHTML = "Incorrect!";
+                                document.querySelector("input").style.backgroundColor = 'red';
+                            }
+                        })
+                    })
+                </script>
 
             </div>
 
